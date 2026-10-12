@@ -1,6 +1,6 @@
-def count_levels(logs): 
-    counts = {} 
-    for line in logs: 
+def count_levels(logs):
+    counts = {}
+    for line in logs:
         level = line.split()[2]
         counts[level] = counts.get(level, 0) + 1
     return counts
