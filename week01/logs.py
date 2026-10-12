@@ -1,9 +1,9 @@
 def count_levels(logs):
     counts = {}
     for line in logs:
-        ln = len(line.split())
-        if ln >= 3:
-            level = line.split()[2].upper()
+        parts = line.split()
+        if len(parts) >= 3:
+            level = parts[2].upper()
             counts[level] = counts.get(level, 0) + 1
     return counts
 
@@ -15,4 +15,5 @@ logs = [
     "2026-10-12 14:06:44 INFO User logged out",
 ]
 
-print(count_levels(logs))
+if __name__ == "__main__":
+    print(count_levels(logs))
