@@ -1,8 +1,10 @@
 def count_levels(logs):
     counts = {}
     for line in logs:
-        level = line.split()[2]
-        counts[level] = counts.get(level, 0) + 1
+        ln = len(line.split())
+        if ln >= 3:
+            level = line.split()[2].upper()
+            counts[level] = counts.get(level, 0) + 1
     return counts
 
 logs = [
